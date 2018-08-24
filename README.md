@@ -1,6 +1,6 @@
 # What is it?
 
-This is the code repository fro an ubuntu container with a "headless" VNC session, SSH, LXQT and preinstalled Firefox and Chrome browser
+This is the code repository for an ubuntu container with a "headless" VNC session, SSH, LXQT and preinstalled Firefox and Chrome browser
 
 The useable docker image can be found here: https://hub.docker.com/r/oliverkohldsc/ubuntu-headless-desktop-vnc/
 
