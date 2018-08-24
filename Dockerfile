@@ -157,6 +157,7 @@ COPY Wallpapers/*.png /Wallpapers/
 
 COPY startup.sh /startup.sh
 COPY supervisor_kohl.conf /etc/supervisor/conf.d/supervisord.conf
+RUN chmod +x startup.sh
 
 ################################################################################
 # merge
