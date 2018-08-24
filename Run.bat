@@ -1,0 +1,1 @@
+docker run -p 5900:5900 -e VNC_PASSWORD=mypassword oliverkohldsc/ubuntu-headless-desktop-vnc
