@@ -109,7 +109,7 @@ RUN export DEBIAN_FRONTEND="noninteractive" && apt-get update \
         xvfb x11vnc \
         firefox chromium-browser \
         ttf-ubuntu-font-family ttf-wqy-zenhei \
-    export DEBIAN_FRONTEND="noninteractive" && apt-get install -y lxqt openbox \
+    && apt-get install -y lxqt openbox \
     && apt-get autoclean \
     && apt-get autoremove \
     && rm -rf /var/lib/apt/lists/* \
