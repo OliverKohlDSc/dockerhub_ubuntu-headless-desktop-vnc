@@ -138,7 +138,7 @@ RUN export DEBIAN_FRONTEND="noninteractive"  && apt-get install -y --no-install-
     && rm -rf /var/lib/apt/lists/* \
     && apt-get update
 
-RUN  export DEBIAN_FRONTEND="noninteractive" && apt-get -y install openssh-server && mkdir /run/sshd
+RUN  export DEBIAN_FRONTEND="noninteractive" && apt-get -y install openssh-server obconf && mkdir /run/sshd
 
 RUN sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
 # kill `ps -e | grep sshd | grep -v grep | awk '{print $1}'`
