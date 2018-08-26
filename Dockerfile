@@ -100,7 +100,7 @@ RUN if [ "x$localbuild" != "x" ]; then sed -i 's#http://archive.ubuntu.com/#http
 
 # Install lxqt
 RUN export DEBIAN_FRONTEND="noninteractive" && apt-get update \
-    && apt-get install -y --no-install-recommends curl dialog software-properties-common wget apt-utils \
+    && apt-get install -y --no-install-recommends curl dialog software-properties-common wget apt-utils aptitude \
     && apt-get update \
     && apt-get install -y --no-install-recommends --allow-unauthenticated \
         supervisor sudo vim net-tools zenity xz-utils \
@@ -109,7 +109,7 @@ RUN export DEBIAN_FRONTEND="noninteractive" && apt-get update \
         xvfb x11vnc \
         firefox chromium-browser \
         ttf-ubuntu-font-family ttf-wqy-zenhei \
-        lxqt openbox \
+    export DEBIAN_FRONTEND="noninteractive" && apt-get install -y lxqt openbox \
     && apt-get autoclean \
     && apt-get autoremove \
     && rm -rf /var/lib/apt/lists/* \
@@ -137,6 +137,8 @@ RUN export DEBIAN_FRONTEND="noninteractive"  && apt-get install -y --no-install-
     && apt-get autoremove --yes --allow-downgrades --allow-change-held-packages \
     && rm -rf /var/lib/apt/lists/* \
     && apt-get update
+
+RUN  export DEBIAN_FRONTEND="noninteractive" && apt-get -y install openssh-server && mkdir /run/sshd
 
 RUN update-alternatives --display x-window-manager
 
