@@ -140,6 +140,9 @@ RUN export DEBIAN_FRONTEND="noninteractive"  && apt-get install -y --no-install-
 
 RUN  export DEBIAN_FRONTEND="noninteractive" && apt-get -y install openssh-server && mkdir /run/sshd
 
+RUN sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
+# kill `ps -e | grep sshd | grep -v grep | awk '{print $1}'`
+
 RUN update-alternatives --display x-window-manager
 
 RUN export DEBIAN_FRONTEND="noninteractive" && apt-get install -y --allow-unauthenticated thunderbird
